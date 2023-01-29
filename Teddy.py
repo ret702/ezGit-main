@@ -74,7 +74,7 @@ def get_repo(update_url,data=None,model=any):
         print("status: " + str(response.status_code))
      
         #create repo if none exists
-        if(response.status_code == 404  or 
+        if(response.status_code == 404  or
            json.loads(response.text)["message"] == "This repository is empty."
            or json.loads(response.text)["message"] == "Not Found"):
            post_(headers,model)
